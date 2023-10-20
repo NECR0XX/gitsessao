@@ -1,6 +1,6 @@
 <?php
 require_once '../config.php';
-require_once '../app\Controllers\UsuarioController.php';
+require_once '../app\Controller\UsuarioController.php';
 
 $usuarioController = new UsuarioController($pdo);
 

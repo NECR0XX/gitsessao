@@ -6,7 +6,7 @@ if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $query = "SELECT * FROM login WHERE (email = :email or usuario = :email) AND senha = :senha";
+    $query = "SELECT * FROM autenticacao WHERE (email = :email or usuario = :email) AND senha = :senha";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);

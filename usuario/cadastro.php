@@ -4,7 +4,10 @@ require_once '../app/Controller/UsuarioController.php';
 
 $usuarioController = new UsuarioController($pdo);
 
-if (isset($_POST['usuario']) && isset($_POST['senha']) && isset($_POST['email'])) {
+if (isset($_POST['usuario']) && 
+    isset($_POST['senha']) && 
+    isset($_POST['email'])) 
+{
     $usuarioController->criarUsuario($_POST['usuario'], $_POST['senha'], $_POST['email']);
 }
 ?>
