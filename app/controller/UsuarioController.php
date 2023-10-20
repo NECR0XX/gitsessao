@@ -1,28 +1,24 @@
 <?php
-require_once 'app/Models/AdmModel.php';
+require_once 'app/Model/UsuarioModel.php';
 
-class AdmController {
-    private $admModel;
+class UsuarioController {
+    private $usuarioModel;
 
     public function __construct($pdo) {
-        $this->admModel = new AdmModel($pdo);
+        $this->usuarioModel = new UsuarioModel($pdo);
     }
 
-    public function criarAdm($usuario, $senha, $email, $tipo_usuario) {
-        $this->admModel->criarAdm($usuario, $senha, $email, $tipo_usuario);
+    public function criarUsuario($usuario, $senha, $email, $tipo_usuario = 1) {
+        $this->usuarioModel->criarUsuario($usuario, $senha, $email, $tipo_usuario);
     }
 
-    public function listarAdms() {
-        return $this->admModel->listarAdms();
+    public function listarUsuarios() {
+        return $this->usuarioModel->listarUsuarios();
     }
 
-    public function listarAdmsComLimite($limite) {
-        return $this->admModel->listarAdmsComLimite($limite);
-    }
-
-    public function exibirListaAdms() {
-        $adms = $this->admModel->listarAdms();
-        include 'Views/adm/lista.php';
+    public function exibirListaUsuarios() {
+        $usuarios = $this->usuarioModel->listarUsuarios();
+        include 'Views/usuario/lista.php';
     }
 }
 ?>

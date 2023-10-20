@@ -1,5 +1,5 @@
 <?php
-require_once 'app/Models/AdmModel.php';
+require_once 'app/Model/AdmModel.php';
 
 class AdmController {
     private $admModel;
@@ -14,10 +14,6 @@ class AdmController {
 
     public function listarAdms() {
         return $this->admModel->listarAdms();
-    }
-
-    public function listarAdmsComLimite($limite) {
-        return $this->admModel->listarAdmsComLimite($limite);
     }
 
     public function exibirListaAdms() {
