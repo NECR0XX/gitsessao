@@ -3,7 +3,7 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST["usuario"];
-    $senha = $_POST["senha"];
+    $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT);
     $email = $_POST["email"];
 
     try {
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $_SESSION["usuario"] = $usuario;
     header("Location: dashboard.php");
-}
+}   
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
