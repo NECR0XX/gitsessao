@@ -1,12 +1,12 @@
 <?php 
 session_start();
-include 'C:\xampp\htdocs\TimeX\config\config.php';
+include '../Config/config.php';
 
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $query = "SELECT * FROM autenticacao WHERE (email = :email or usuario = :email) AND senha = :senha";
+    $query = "SELECT * FROM usuarios WHERE (email = :email or usuario = :email) AND senha = :senha";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->bindParam(':senha', $senha, PDO::PARAM_STR);
@@ -22,7 +22,7 @@ if (isset($_POST['email'])) {
 
         
         if ($_SESSION['usuarioNiveisAcessoId'] == "1") {
-            header("Location: admindex.php");
+            header("Location: ../adm/admindex.php");
         } elseif ($_SESSION['usuarioNiveisAcessoId'] == "2") {
             header("Location: index.php");
         } else {
@@ -30,7 +30,7 @@ if (isset($_POST['email'])) {
         }
     } else {
         $_SESSION['nao_autenticado'] = true;
-        header('Location: index.php');
+        header('Location: login.php');
         exit();
     }
 } 

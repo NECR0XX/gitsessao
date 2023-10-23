@@ -11,17 +11,15 @@
                     <tr>
                         <th>ID</th>
                         <th>Usuário</th>
-                        <th>Senha</th>
                         <th>E-mail</th>
                     </tr>
                 </thead>
-                <?php foreach ($adms as $adm): ?>
+                <?php foreach ($usuarios as $usuario): ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $adm['id_usuario']; ?></td>
-                            <td><?php echo $adm['usuario']; ?></td>
-                            <td><?php echo $adm['senha']; ?></td>
-                            <td><?php echo $adm['email']; ?></td>
+                            <td><?php echo $usuario['id_usuario']; ?></td>
+                            <td><?php echo $usuario['usuario']; ?></td>
+                            <td><?php echo $usuario['email']; ?></td>
                         </tr>
                 <?php endforeach; ?>
                 <tbody>
@@ -29,4 +27,3 @@
     </fieldset>
 </body>
 </html>
-

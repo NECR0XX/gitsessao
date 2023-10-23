@@ -1,5 +1,5 @@
 <?php
-require_once '../config.php';
+require_once '../Config/config.php';
 require_once '../app/Controller/UsuarioController.php';
 
 $usuarioController = new UsuarioController($pdo);
@@ -19,6 +19,14 @@ if (isset($_POST['usuario']) &&
     <title>Cadastro</title>
 </head>
 <body>
+<?php
+    if(isset($_SESSION['nao_autenticado'])):
+?>
+  
+<?php
+    endif;
+    unset($_SESSION['nao_autenticado']);
+?>
     <h1>Cadastro</h1>
     <form method="post">
         <input type="text" name="usuario" placeholder="Nome de Usuário" required><br>

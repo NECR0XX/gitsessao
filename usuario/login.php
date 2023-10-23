@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,19 +9,18 @@ session_start()
 </head>
 <body>
     <?php
-        if(isset($_SESSION['nao_autenticado'])):
-    ?>
-    <?php
-        endif;
+    if (isset($_SESSION['nao_autenticado'])) {
+        echo "<p>Usuário ou senha inválidos.</p>";
         unset($_SESSION['nao_autenticado']);
+    }
     ?>
-    
+
     <h1>Login</h1>
-    <form method="post">
-        <input type="text" name="usuario" placeholder="Nome de Usuário" required><br>
+    <form method="post" action="loginconfig.php">
+        <input type="text" name="email" placeholder="Email ou Nome de Usuário" required><br>
         <input type="password" name="senha" placeholder="Senha" required><br>
         <input type="submit" value="Entrar">
-    </form>
-    <a href="cadastro.php">CADASTRO</a>
+    </form><br><br>
+    <a href="../usuarios/cadastro.php">CADASTRO</a>
 </body>
 </html>

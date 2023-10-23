@@ -1,5 +1,5 @@
 <?php
-require_once 'app/Model/AdmModel.php';
+require_once '../app/Model/AdmModel.php';
 
 class AdmController {
     private $admModel;
@@ -18,7 +18,7 @@ class AdmController {
 
     public function exibirListaAdms() {
         $adms = $this->admModel->listarAdms();
-        include 'Views/adm/lista.php';
+        include '../app/View/lista/usuario.php';
     }
 
     public function atualizarAdm($id_usuario, $usuario, $senha, $email, $tipo_usuario) {

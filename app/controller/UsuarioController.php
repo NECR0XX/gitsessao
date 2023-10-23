@@ -1,5 +1,5 @@
 <?php
-require_once 'app/Model/UsuarioModel.php';
+require_once '../app/Model/UsuarioModel.php';
 
 class UsuarioController {
     private $usuarioModel;
@@ -8,8 +8,8 @@ class UsuarioController {
         $this->usuarioModel = new UsuarioModel($pdo);
     }
 
-    public function criarUsuario($usuario, $senha, $email, $tipo_usuario = 1) {
-        $this->usuarioModel->criarUsuario($usuario, $senha, $email, $tipo_usuario);
+    public function criarUsuario($usuario, $senha, $email) {
+        $this->usuarioModel->criarUsuario($usuario, $senha, $email);
     }
 
     public function listarUsuarios() {
@@ -18,7 +18,7 @@ class UsuarioController {
 
     public function exibirListaUsuarios() {
         $usuarios = $this->usuarioModel->listarUsuarios();
-        include 'Views/usuario/lista.php';
+        include '../app/View/lista/usuario.php';
     }
 }
 ?>
