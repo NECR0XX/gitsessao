@@ -12,8 +12,8 @@ if (isset($_POST['usuario']) &&
 }
 
 // Atualiza Adm
-if (isset($_POST['id_usuario']) && isset($_POST['atualizar_usuario']) && isset($_POST['atualizar_senha']) && isset($_POST['atualizar_email'])) {
-    $admController->atualizarAdm($_POST['id_usuario'], $_POST['atualizar_usuario'], $_POST['atualizar_senha'], $_POST['atualizar_email']);
+if (isset($_POST['id_usuario']) && isset($_POST['atualizar_usuario']) && isset($_POST['atualizar_senha']) && isset($_POST['atualizar_email']) && isset($_POST['atualizar_tipo_usuario'])) {
+    $admController->atualizarAdm($_POST['id_usuario'], $_POST['atualizar_usuario'], $_POST['atualizar_senha'], $_POST['atualizar_email'], $_POST['atualizar_tipo_usuario']);
 }
 
 // Excluir Adm
@@ -31,6 +31,7 @@ $adms = $admController->listarAdms();
     <title>CRUD com MVC e PDO</title>
 </head>
 <body>
+    <a href="admindex.php">Voltar</a>
     <h1>Usuários</h1>
     <form method="post">
         <input type="text" name="usuario" placeholder="Nome" required>
@@ -56,6 +57,7 @@ $adms = $admController->listarAdms();
                 <input type="text" name="atualizar_usuario" placeholder="Novo Nome" required>
                 <input type="text" name="atualizar_senha" placeholder="Nova senha" required>
                 <input type="email" name="atualizar_email" placeholder="Novo E-mail" required>
+                <input type="number" name="atualizar_tipo_usuario" placeholder="Novo Tipo de Usuário" required>
         <button type="submit">Atualizar Usuáios</button>
     </form>
 
