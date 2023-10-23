@@ -21,6 +21,6 @@ session_start();
         <input type="password" name="senha" placeholder="Senha" required><br>
         <input type="submit" value="Entrar">
     </form><br><br>
-    <a href="../usuarios/cadastro.php">CADASTRO</a>
+    <a href="cadastro.php">CADASTRO</a>
 </body>
 </html>
