@@ -37,17 +37,17 @@ $adms = $admController->listarAdms();
         <input type="text" name="usuario" placeholder="Nome" required>
         <input type="password" name="senha" placeholder="Senha" required>
         <input type="text" name="senha" placeholder="E-mail" required>
-        <button type="submit">Adicionar adm</button>
+        <button type="submit">Adicionar Usuário</button>
     </form>
 
-    <h2>Lista de Usuáios</h2>
+    <h2>Lista de Usuários</h2>
     <ul>
         <?php foreach ($adms as $adm): ?>
             <li><?php echo $adm['usuario']; ?> - <?php echo $adm['senha']; ?> - <?php echo $adm['email']; ?> - <?php echo $adm['tipo_usuario']; ?></li>
         <?php endforeach; ?>
     </ul>
 
-<h2>Atualizar Usuáios</h2>
+<h2>Atualizar Usuários</h2>
     <form method="post">
         <select name="id_usuario">
         <?php foreach ($adms as $adm): ?>
@@ -58,7 +58,7 @@ $adms = $admController->listarAdms();
                 <input type="text" name="atualizar_senha" placeholder="Nova senha" required>
                 <input type="email" name="atualizar_email" placeholder="Novo E-mail" required>
                 <input type="number" name="atualizar_tipo_usuario" placeholder="Novo Tipo de Usuário" required>
-        <button type="submit">Atualizar Usuáios</button>
+        <button type="submit">Atualizar Usuários</button>
     </form>
 
     <h2>Excluir Usuário</h2>
@@ -68,7 +68,7 @@ $adms = $admController->listarAdms();
                 <option value="<?php echo $adm['id_usuario']; ?>"><?php echo $adm['usuario']; ?></option>
             <?php endforeach; ?>
         </select>
-        <button type="submit">Excluir Usuáios</button>
+        <button type="submit">Excluir Usuários</button>
     </form>
 </body>
 </html>
